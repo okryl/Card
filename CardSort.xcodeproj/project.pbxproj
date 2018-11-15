@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC4300F4219DE5D100B5933D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4300F3219DE5D100B5933D /* AppDelegate.swift */; };
+		EC4300F6219DE5D100B5933D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4300F5219DE5D100B5933D /* ViewController.swift */; };
+		EC4300F9219DE5D100B5933D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4300F7219DE5D100B5933D /* Main.storyboard */; };
+		EC4300FB219DE5D300B5933D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4300FA219DE5D300B5933D /* Assets.xcassets */; };
+		EC4300FE219DE5D300B5933D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4300FC219DE5D300B5933D /* LaunchScreen.storyboard */; };
+		EC430109219DE5D300B5933D /* CardSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC430108219DE5D300B5933D /* CardSortTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC430105219DE5D300B5933D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC4300E8219DE5D100B5933D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC4300EF219DE5D100B5933D;
+			remoteInfo = CardSort;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC4300F0219DE5D100B5933D /* CardSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4300F3219DE5D100B5933D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC4300F5219DE5D100B5933D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC4300F8219DE5D100B5933D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC4300FA219DE5D300B5933D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC4300FD219DE5D300B5933D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC4300FF219DE5D300B5933D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC430104219DE5D300B5933D /* CardSortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC430108219DE5D300B5933D /* CardSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortTests.swift; sourceTree = "<group>"; };
+		EC43010A219DE5D300B5933D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC4300ED219DE5D100B5933D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC430101219DE5D300B5933D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC4300E7219DE5D100B5933D = {
+			isa = PBXGroup;
+			children = (
+				EC4300F2219DE5D100B5933D /* CardSort */,
+				EC430107219DE5D300B5933D /* CardSortTests */,
+				EC4300F1219DE5D100B5933D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC4300F1219DE5D100B5933D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC4300F0219DE5D100B5933D /* CardSort.app */,
+				EC430104219DE5D300B5933D /* CardSortTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC4300F2219DE5D100B5933D /* CardSort */ = {
+			isa = PBXGroup;
+			children = (
+				EC4300F3219DE5D100B5933D /* AppDelegate.swift */,
+				EC4300F5219DE5D100B5933D /* ViewController.swift */,
+				EC4300F7219DE5D100B5933D /* Main.storyboard */,
+				EC4300FA219DE5D300B5933D /* Assets.xcassets */,
+				EC4300FC219DE5D300B5933D /* LaunchScreen.storyboard */,
+				EC4300FF219DE5D300B5933D /* Info.plist */,
+			);
+			path = CardSort;
+			sourceTree = "<group>";
+		};
+		EC430107219DE5D300B5933D /* CardSortTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC430108219DE5D300B5933D /* CardSortTests.swift */,
+				EC43010A219DE5D300B5933D /* Info.plist */,
+			);
+			path = CardSortTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC4300EF219DE5D100B5933D /* CardSort */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC43010D219DE5D300B5933D /* Build configuration list for PBXNativeTarget "CardSort" */;
+			buildPhases = (
+				EC4300EC219DE5D100B5933D /* Sources */,
+				EC4300ED219DE5D100B5933D /* Frameworks */,
+				EC4300EE219DE5D100B5933D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardSort;
+			productName = CardSort;
+			productReference = EC4300F0219DE5D100B5933D /* CardSort.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC430103219DE5D300B5933D /* CardSortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC430110219DE5D300B5933D /* Build configuration list for PBXNativeTarget "CardSortTests" */;
+			buildPhases = (
+				EC430100219DE5D300B5933D /* Sources */,
+				EC430101219DE5D300B5933D /* Frameworks */,
+				EC430102219DE5D300B5933D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC430106219DE5D300B5933D /* PBXTargetDependency */,
+			);
+			name = CardSortTests;
+			productName = CardSortTests;
+			productReference = EC430104219DE5D300B5933D /* CardSortTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC4300E8219DE5D100B5933D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Omer Karayel";
+				TargetAttributes = {
+					EC4300EF219DE5D100B5933D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					EC430103219DE5D300B5933D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EC4300EF219DE5D100B5933D;
+					};
+				};
+			};
+			buildConfigurationList = EC4300EB219DE5D100B5933D /* Build configuration list for PBXProject "CardSort" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC4300E7219DE5D100B5933D;
+			productRefGroup = EC4300F1219DE5D100B5933D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC4300EF219DE5D100B5933D /* CardSort */,
+				EC430103219DE5D300B5933D /* CardSortTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC4300EE219DE5D100B5933D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4300FE219DE5D300B5933D /* LaunchScreen.storyboard in Resources */,
+				EC4300FB219DE5D300B5933D /* Assets.xcassets in Resources */,
+				EC4300F9219DE5D100B5933D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC430102219DE5D300B5933D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC4300EC219DE5D100B5933D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4300F6219DE5D100B5933D /* ViewController.swift in Sources */,
+				EC4300F4219DE5D100B5933D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC430100219DE5D300B5933D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC430109219DE5D300B5933D /* CardSortTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC430106219DE5D300B5933D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC4300EF219DE5D100B5933D /* CardSort */;
+			targetProxy = EC430105219DE5D300B5933D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC4300F7219DE5D100B5933D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4300F8219DE5D100B5933D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC4300FC219DE5D300B5933D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4300FD219DE5D300B5933D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC43010B219DE5D300B5933D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC43010C219DE5D300B5933D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC43010E219DE5D300B5933D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CardSort/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kryl.CardSort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC43010F219DE5D300B5933D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CardSort/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kryl.CardSort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC430111219DE5D300B5933D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CardSortTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kryl.CardSortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardSort.app/CardSort";
+			};
+			name = Debug;
+		};
+		EC430112219DE5D300B5933D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CardSortTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kryl.CardSortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardSort.app/CardSort";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC4300EB219DE5D100B5933D /* Build configuration list for PBXProject "CardSort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC43010B219DE5D300B5933D /* Debug */,
+				EC43010C219DE5D300B5933D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC43010D219DE5D300B5933D /* Build configuration list for PBXNativeTarget "CardSort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC43010E219DE5D300B5933D /* Debug */,
+				EC43010F219DE5D300B5933D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC430110219DE5D300B5933D /* Build configuration list for PBXNativeTarget "CardSortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC430111219DE5D300B5933D /* Debug */,
+				EC430112219DE5D300B5933D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC4300E8219DE5D100B5933D /* Project object */;
+}
