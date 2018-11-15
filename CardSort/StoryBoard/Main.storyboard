@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Deck View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DeckViewController" customModule="CardSort" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-m5-koT">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-Iw-j3e">
+                                        <rect key="frame" x="0.0" y="96" width="568" height="224"/>
+                                        <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIX-fD-x2J">
+                                        <rect key="frame" x="20" y="10" width="147" height="40"/>
+                                        <color key="backgroundColor" red="0.32921482158044268" green="0.28921825359103981" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="21"/>
+                                        <state key="normal" title=" 1-2-3 Sıralama ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="serialSortButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXG-nm-dzP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgh-ZV-k32">
+                                        <rect key="frame" x="212" y="10" width="144" height="40"/>
+                                        <color key="backgroundColor" red="0.32921482158044268" green="0.28921825359103981" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="21"/>
+                                        <state key="normal" title=" Akıllı Sıralama ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="smartSortButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="fay-Z5-LJ0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-f3-Qbm">
+                                        <rect key="frame" x="409" y="10" width="139" height="40"/>
+                                        <color key="backgroundColor" red="0.32921482158044268" green="0.28921825359103981" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="21"/>
+                                        <state key="normal" title=" 777 Sıralama ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="suitSortButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="BhE-1y-gOy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4M0-ey-HVg">
+                                        <rect key="frame" x="471" y="60" width="82" height="29"/>
+                                        <color key="backgroundColor" red="1" green="0.068675073765524508" blue="0.12777997731728319" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <state key="normal" title=" New Cards ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resetButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="nBc-VK-F3T"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-aD-YiJ">
+                                        <rect key="frame" x="10" y="312" width="548" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wvq-aD-YiJ" secondAttribute="trailing" constant="10" id="5FO-qD-ail"/>
+                                    <constraint firstItem="4M0-ey-HVg" firstAttribute="top" secondItem="qyf-f3-Qbm" secondAttribute="bottom" constant="10" id="6oI-eu-QXu"/>
+                                    <constraint firstItem="Mgh-ZV-k32" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TIX-fD-x2J" secondAttribute="trailing" constant="8" symbolic="YES" id="8D8-yN-Mqy"/>
+                                    <constraint firstItem="Mgh-ZV-k32" firstAttribute="centerY" secondItem="TIX-fD-x2J" secondAttribute="centerY" id="Auv-Pj-rPb"/>
+                                    <constraint firstItem="Mgh-ZV-k32" firstAttribute="centerX" secondItem="M6U-Iw-j3e" secondAttribute="centerX" id="BHo-ZH-WCe"/>
+                                    <constraint firstAttribute="trailing" secondItem="4M0-ey-HVg" secondAttribute="trailing" constant="15" id="Dpt-1E-zoF"/>
+                                    <constraint firstItem="wvq-aD-YiJ" firstAttribute="leading" secondItem="vfC-m5-koT" secondAttribute="leading" constant="10" id="FQ9-YN-CAR"/>
+                                    <constraint firstAttribute="bottom" secondItem="wvq-aD-YiJ" secondAttribute="bottom" constant="8" id="MZC-K8-G9V"/>
+                                    <constraint firstAttribute="trailing" secondItem="M6U-Iw-j3e" secondAttribute="trailing" id="NHS-vv-d5z"/>
+                                    <constraint firstItem="TIX-fD-x2J" firstAttribute="leading" secondItem="vfC-m5-koT" secondAttribute="leading" constant="20" id="RIb-Vz-49f"/>
+                                    <constraint firstAttribute="bottom" secondItem="M6U-Iw-j3e" secondAttribute="bottom" id="V37-h0-y9N"/>
+                                    <constraint firstItem="TIX-fD-x2J" firstAttribute="top" secondItem="vfC-m5-koT" secondAttribute="top" constant="10" id="V5y-nK-FNQ"/>
+                                    <constraint firstItem="M6U-Iw-j3e" firstAttribute="leading" secondItem="vfC-m5-koT" secondAttribute="leading" id="Ztg-lG-h55"/>
+                                    <constraint firstItem="qyf-f3-Qbm" firstAttribute="centerY" secondItem="Mgh-ZV-k32" secondAttribute="centerY" id="aOx-Lq-RrD"/>
+                                    <constraint firstItem="qyf-f3-Qbm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mgh-ZV-k32" secondAttribute="trailing" constant="8" symbolic="YES" id="rQK-VA-dfI"/>
+                                    <constraint firstAttribute="trailing" secondItem="qyf-f3-Qbm" secondAttribute="trailing" constant="20" id="xMh-ek-RaK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="M6U-Iw-j3e" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="7/10" id="Hmd-Av-ktN"/>
+                            <constraint firstItem="vfC-m5-koT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ngi-yG-hy4"/>
+                            <constraint firstItem="vfC-m5-koT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TJC-8p-83N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vfC-m5-koT" secondAttribute="trailing" id="dTM-0e-iCT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vfC-m5-koT" secondAttribute="bottom" id="oEk-IW-Uey"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardsContainerView" destination="M6U-Iw-j3e" id="XgZ-kG-nWP"/>
+                        <outlet property="groupInfoLabel" destination="wvq-aD-YiJ" id="ezv-lr-hPz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
