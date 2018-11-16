@@ -45,7 +45,7 @@ class SerialSort: SortProtocol {
             
             let realIndexes = serial.map{$0+index}
             subSets.append(realIndexes)
-            index = index + 3
+            index = index + (serial[1] - serial[0] + 1)
             
             groups.append(resultCards)
         }

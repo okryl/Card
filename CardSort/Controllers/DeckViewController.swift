@@ -258,7 +258,6 @@ final class DeckViewController: UIViewController {
         cards = Dealor.getPlayersDeck()
         addCardViews()
     }
-    
 }
 
 //MARK: - CardDragDelegateProtocol
