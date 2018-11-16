@@ -40,7 +40,7 @@ class CardSortTests: XCTestCase {
     //MARK: -
     func testSerialSort() {
         
-        let sortingAlgorithms = SortAlgorithms(allCards: mockCards)
+        let sortingAlgorithms = SortAlgorithms()
         
         let serialCardIndexes = sortingAlgorithms.serialSort(cards: mockCards).0 ?? []
         
@@ -66,7 +66,7 @@ class CardSortTests: XCTestCase {
     
     func testSuitSort() {
         
-        let sortingAlgorithms = SortAlgorithms(allCards: mockCards)
+        let sortingAlgorithms = SortAlgorithms()
         
         let suitCardIndexes = sortingAlgorithms.suitSort(cards: mockCards).0 ?? []
         
@@ -93,7 +93,7 @@ class CardSortTests: XCTestCase {
     }
     
     func testSmartSort() {
-        let sortingAlgorithms = SortAlgorithms(allCards: mockCards)
+        let sortingAlgorithms = SortAlgorithms()
         
         let cardIndexes = sortingAlgorithms.smartSort(cards: mockCards)
         
@@ -123,5 +123,29 @@ class CardSortTests: XCTestCase {
     }
     
     //MARK: -
+    
+    func testSerialAndSameSuitCards() {
+        let sortingAlgorithms = SortAlgorithms()
+        var cards = [Card]()
+        let allCards = Dealor.generateCards()
+        
+        for i in 0...10 {
+            cards.append(allCards[i])
+        }
+        
+        let serialSortCardIndexes = sortingAlgorithms.serialSort(cards: cards).0 ?? []
+        let suitSortCardIndexes = sortingAlgorithms.suitSort(cards: cards).0 ?? []
+        let smartSortIndexes = sortingAlgorithms.smartSort(cards: cards) ?? []
+        
+        let expectedIndexes =  [0,1,2,3,4,5,6,7,8,9,10]
+        if serialSortCardIndexes == expectedIndexes,
+            suitSortCardIndexes == [],
+            smartSortIndexes == expectedIndexes{
+            XCTAssert(true)
+        } else {
+            XCTAssert(false)
+        }
+    }
+    
 }
 
