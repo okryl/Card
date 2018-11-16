@@ -20,6 +20,7 @@ final class DeckViewController: UIViewController {
     private var targetViews = [UIView]()
     private var cardViews = [CardView]()
     private var cards: [Card]!
+
     private let sortingAlgorithm = SortAlgorithms()
     
     //MARK: - View Life Cycle
@@ -28,7 +29,15 @@ final class DeckViewController: UIViewController {
         super.viewDidLoad()
         
         cards = Dealor.getPlayersDeck()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         addCardViews()
     }
     
@@ -71,13 +80,13 @@ final class DeckViewController: UIViewController {
             cardView.transform = CGAffineTransform(translationX: 0, y: -500)
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
                 
-                UIView.animate(withDuration: 0.35, delay: 0.0, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 0.30, delay: 0.0, options: .curveEaseIn, animations: {
                     cardView.transform = CGAffineTransform(rotationAngle: CGFloat(radians[i])).translatedBy(x: 0, y: CGFloat(yPosition[i]))
                 }, completion: { _ in
                 })
             })
             
-            delay = delay + 0.2
+            delay = delay + 0.15
         }
     }
     
@@ -170,7 +179,6 @@ final class DeckViewController: UIViewController {
         let sortedCards = sortingAlgorithm.smartSort(cards: cards)
         
         sortedCards.map {
-            
             var newCards = [Card]()
             
             $0.forEach {

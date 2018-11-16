@@ -28,27 +28,10 @@ class Dealor {
         
         var cards = [Card]()
         let shuffledCards = generateCards().shuffled()
-        //
+       
         for i in 0..<11 {
             cards.append(shuffledCards[i])
         }
-        //
-        //        cards[2] = Card(suit: .hearts, type: .five)
-        //        cards[5] = Card(suit: .hearts, type: .ace)
-        //        cards[8] = Card(suit: .hearts, type: .two)
-        //        cards[10] = Card(suit: .hearts, type: .two)
-        
-        cards = [Card(suit: .hearts, type: .ace),
-                 Card(suit: .clubs, type: .two),
-                 Card(suit: .diamonds, type: .five),
-                 Card(suit: .hearts, type: .four),
-                 Card(suit: .clubs, type: .ace),
-                 Card(suit: .diamonds, type: .three),
-                 Card(suit: .spades, type: .four),
-                 Card(suit: .clubs, type: .four),
-                 Card(suit: .diamonds, type: .ace),
-                 Card(suit: .clubs, type: .three),
-                 Card(suit: .diamonds, type: .four)]
         
         return cards
     }

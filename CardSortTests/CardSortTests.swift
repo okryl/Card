@@ -40,7 +40,7 @@ class CardSortTests: XCTestCase {
     //MARK: -
     func testSerialSort() {
         
-        let sortingAlgorithms = SortAlgorithms()
+        let sortingAlgorithms = SortAlgorithms(allCards: mockCards)
         
         let serialCardIndexes = sortingAlgorithms.serialSort(cards: mockCards).0 ?? []
         
@@ -66,7 +66,7 @@ class CardSortTests: XCTestCase {
     
     func testSuitSort() {
         
-        let sortingAlgorithms = SortAlgorithms()
+        let sortingAlgorithms = SortAlgorithms(allCards: mockCards)
         
         let suitCardIndexes = sortingAlgorithms.suitSort(cards: mockCards).0 ?? []
         
@@ -93,7 +93,7 @@ class CardSortTests: XCTestCase {
     }
     
     func testSmartSort() {
-        let sortingAlgorithms = SortAlgorithms()
+        let sortingAlgorithms = SortAlgorithms(allCards: mockCards)
         
         let cardIndexes = sortingAlgorithms.smartSort(cards: mockCards)
         
