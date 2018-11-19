@@ -20,7 +20,7 @@ class SmartSort {
         
         for i in 0..<allSubSet.count {
             
-            for j in 0..<allSubSet.count{
+            for j in i..<allSubSet.count{
                 
                 if i == j {
                     cardCombinationSets.insert(allSubSet[i])
