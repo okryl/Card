@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 class Dealor {
     
     class func generateCards() -> [Card] {
@@ -29,10 +31,10 @@ class Dealor {
         var cards = [Card]()
         let shuffledCards = generateCards().shuffled()
        
-        for i in 0..<11 {
+        for i in 0..<CARD_COUNT {
             cards.append(shuffledCards[i])
         }
-        
+
         return cards
     }
 }

@@ -12,19 +12,21 @@ class SortAlgorithms {
     
     //MARK: - Variables
     
-    private let allCardIndexes = [0,1,2,3,4,5,6,7,8,9,10]
+    var differentCards = [Card]()
+    private let allCardIndexes = Array(0..<CARD_COUNT)
     
     //MARK: - Sorting Functions
     
     //MARK: - Serial Sort
     
     func serialSort(cards: [Card]) -> ([Int]?, [[Card]]) {
-        
+        differentCards.removeAll()
         let serialSort = SerialSort()
         let serialCardsTupple = serialSort.sort(withCards: getOrderedCardWithSuit(cards: cards))
         let serialCards = serialCardsTupple.0
         
         if serialCards.count == 0 {
+            differentCards = cards
             let orderedCardIndexes = detectDifferentCardAndSortWithRank(cardIndexes: [], cards: cards)
             return (orderedCardIndexes, serialCardsTupple.1)
         }
@@ -37,6 +39,12 @@ class SortAlgorithms {
             }
         }
         
+        let differentCardIndexes = serialCardIndexes.difference(from: allCardIndexes)
+        
+        differentCardIndexes.forEach {
+            differentCards.append(cards[$0])
+        }
+        
         serialCardIndexes.append(contentsOf: detectDifferentCardAndSortWithRank(cardIndexes: serialCardIndexes, cards: cards))
 
         return (serialCardIndexes,serialCardsTupple.1)
@@ -45,11 +53,13 @@ class SortAlgorithms {
     //MARK: - Suit Sort
     
     func suitSort(cards: [Card]) -> ([Int]?, [[Card]]) {
+        differentCards.removeAll()
         let suitSort = SuitSort()
         let suitCardsTupple = suitSort.sort(withCards: cards)
         let suitCards = suitCardsTupple.0
         
         if suitCards.count == 0 {
+            differentCards = cards
             let orderedCardIndexes = detectDifferentCardAndSortWithRank(cardIndexes: [], cards: cards)
             return (orderedCardIndexes,suitCardsTupple.1)
         }
@@ -62,6 +72,12 @@ class SortAlgorithms {
             }
         }
         
+        let differentCardIndexes = suitCardIndexes.difference(from: allCardIndexes)
+        
+        differentCardIndexes.forEach {
+            differentCards.append(cards[$0])
+        }
+        
         suitCardIndexes.append(contentsOf: detectDifferentCardAndSortWithRank(cardIndexes: suitCardIndexes, cards: cards))
 
         return (suitCardIndexes, suitCardsTupple.1)
@@ -70,12 +86,13 @@ class SortAlgorithms {
     //MARK: - Smart Sort
     
     func smartSort(cards: [Card]) -> [Int]? {
+        differentCards.removeAll()
         let smartSort = SmartSort()
         let serialSort = SerialSort()
         let suitSort = SuitSort()
         
         let serialCardsTupple = serialSort.sort(withCards: getOrderedCardWithSuit(cards: cards))
-        let _ = suitSort.sort(withCards: getOrderedCardWithSuit(cards: cards))
+        suitSort.sort(withCards: getOrderedCardWithSuit(cards: cards))
         
         let serialSortSubSet = serialSort.subSets
         let serialSortAllSubSet = serialSort.allSubSets
@@ -107,6 +124,7 @@ class SortAlgorithms {
             let smartCards = smartSort.sort(cards: getOrderedCardWithSuit(cards: cards), allSubSet: allSubSets)
             
             if smartCards.count == 0 {
+                differentCards = cards
                 let orderedCardIndexes = detectDifferentCardAndSortWithRank(cardIndexes: [], cards: cards)
                 return orderedCardIndexes
             }
@@ -117,6 +135,12 @@ class SortAlgorithms {
                 if let index = cards.firstIndex(of: $0) {
                     smartCardIndexes.append(index)
                 }
+            }
+            
+            let differentCardIndexes = smartCardIndexes.difference(from: allCardIndexes)
+            
+            differentCardIndexes.forEach {
+                differentCards.append(cards[$0])
             }
             
             smartCardIndexes.append(contentsOf: detectDifferentCardAndSortWithRank(cardIndexes: smartCardIndexes, cards: cards))

@@ -8,6 +8,8 @@
 
 import UIKit
 
+let CARD_COUNT = 5
+
 final class DeckViewController: UIViewController {
     
     //MARK: - UI
@@ -20,8 +22,29 @@ final class DeckViewController: UIViewController {
     private var targetViews = [UIView]()
     private var cardViews = [CardView]()
     private var cards: [Card]!
-
     private let sortingAlgorithm = SortAlgorithms()
+    private let cardRadians: [CGFloat] = {
+        let cardCount = CARD_COUNT % 2 == 0 ? CARD_COUNT : CARD_COUNT + 1
+        var radians: [CGFloat] = [0, 0.07, 0.11, 0.17, 0.22, 0.24, 0.28, 0.31, 0.38, 0.48, 0.60, 0.64, 0.72,0.72,0.72,0.72,0.72,0.72]
+        var reversedRadias = radians[0..<Int(ceil(Double(cardCount/2)))].reversed().map { CGFloat(0 - $0)}
+        reversedRadias.append(contentsOf: radians[0..<Int(ceil(Double(cardCount/2)))])
+        
+        if CARD_COUNT % 2 == 1 && CARD_COUNT > 1 {
+            reversedRadias.remove(at: CARD_COUNT / 2)
+        }
+        return reversedRadias
+    }()
+    private let  cardsYPositions: [CGFloat] = {
+        let cardCount = CARD_COUNT % 2 == 0 ? CARD_COUNT : CARD_COUNT + 1
+        var yPositions: [CGFloat] =  [8, 12, 17, 24, 35, 47, 60, 75, 90, 110, 110, 130,140,150,160,170,180]
+        var reversedYPositions = yPositions[0..<Int(ceil(Double(cardCount/2)))].reversed().map { CGFloat($0)}
+        reversedYPositions.append(contentsOf: yPositions[0..<Int(ceil(Double(cardCount/2)))])
+        
+        if CARD_COUNT % 2 == 1 && CARD_COUNT > 1 {
+            reversedYPositions.remove(at: CARD_COUNT / 2)
+        }
+        return reversedYPositions
+    }()
     
     //MARK: - View Life Cycle
     
@@ -30,58 +53,75 @@ final class DeckViewController: UIViewController {
         
         cards = Dealor.getPlayersDeck()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        generateCardViews()
+        generateTargetViews()
         addCardViews()
+    }
+    
+    //MARK: - Generate Card Views
+    
+    private func generateCardViews() {
+        
+        for _ in 0..<CARD_COUNT {
+            let cardView = CardView()
+            cardView.dragDelegate = self
+            cardViews.append(cardView)
+        }
+    }
+    
+    private func generateTargetViews() {
+        
+        for _ in 0..<CARD_COUNT {
+            let targetView = UIView()
+            targetView.backgroundColor = .clear
+            targetViews.append(targetView)
+            cardsContainerView.addSubview(targetView)
+        }
     }
     
     //MARK: - Add Card In Container
     
     func addCardViews() {
-        var radians = [-0.2, -0.17, -0.13, -0.10, -0.02, 0, 0.02, 0.1, 0.13, 0.17, 0.2]
-        var yPosition = [40, 30, 24, 19, 16, 14, 16, 19, 24, 30, 40]
         
-        var xPosition: CGFloat = 20
-        let width = cardsContainerView.frame.width / 7
+        var divider = CARD_COUNT * 7 / 11
+        if divider < 7 {
+            divider = 7
+        }
+        let width = cardsContainerView.frame.width /  CGFloat(divider)
+        var xPosition: CGFloat =  cardsContainerView.center.x - (CGFloat((CARD_COUNT+1) / 2) * width/2)
         let height = cardsContainerView.frame.height - 100
         var delay = 0.0
         
-        for i in 0...10 {
+        for i in 0..<CARD_COUNT {
             
-            let cardView = CardView(card: cards[i])
-            cardView.dragDelegate = self
-            cardView.backgroundColor = .yellow
+            let cardView = cardViews[i]
             cardView.index = i
-            cardViews.append(cardView)
+            cardView.card = cards[i]
             
+            let targetView = targetViews[i]
+            targetView.transform = .identity
             
-            let backView = UIView()
-            backView.backgroundColor = .clear
-            targetViews.append(backView)
-            
-            backView.frame = CGRect(x: xPosition, y: 0, width: width, height: height)
+            targetView.frame = CGRect(x: xPosition, y: 0, width: width, height: height)
             cardView.frame = CGRect(x: xPosition, y: 0, width: width, height: height)
             
             xPosition = xPosition + width/2
             
-            backView.transform = CGAffineTransform(rotationAngle: CGFloat(radians[i])).translatedBy(x: 0, y: CGFloat(yPosition[i]))
-            backView.backgroundColor = .clear
-            backView.layer.zPosition = CGFloat(i/100)
+            targetView.transform = CGAffineTransform(rotationAngle: CGFloat(cardRadians[i])).translatedBy(x: 0, y: CGFloat(cardsYPositions[i]))
+            targetView.backgroundColor = .clear
+            targetView.layer.zPosition = CGFloat(i/100)
             
-            
-            cardsContainerView.addSubview(backView)
             cardsContainerView.addSubview(cardView)
             cardView.transform = CGAffineTransform(translationX: 0, y: -500)
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
                 
                 UIView.animate(withDuration: 0.30, delay: 0.0, options: .curveEaseIn, animations: {
-                    cardView.transform = CGAffineTransform(rotationAngle: CGFloat(radians[i])).translatedBy(x: 0, y: CGFloat(yPosition[i]))
+                    cardView.transform = CGAffineTransform(rotationAngle: CGFloat(self.cardRadians[i])).translatedBy(x: 0, y: CGFloat(self.cardsYPositions[i]))
+                    print(self.cardsYPositions[i])
                 }, completion: { _ in
                 })
             })
@@ -116,36 +156,25 @@ final class DeckViewController: UIViewController {
         return closesViews?.0
     }
     
-    //MARK: - Handle Card Group
-    
-    private func handleGroup(groups: [[Card]]) {
-        
-        var groupInfoText: String = ""
-        
-        for i in 0..<groups.count {
-            groupInfoText = groupInfoText + "\(i+1). grup = "
-            
-            for j in stride(from:groups[i].count - 1,to:-1,by:-1) {
-                let card = groups[i].reversed()[j]
-                groupInfoText = groupInfoText + "\(card.suit) \(card.type), "
-            }
-        }
-        
-        groupInfoLabel.text = groupInfoText
-    }
-    
     //MARK: - IBActions
     
     @IBAction func serialSortButtonTapped() {
         groupInfoLabel.text = ""
-
+        
         let sortedCardsTupple = sortingAlgorithm.serialSort(cards: cards)
         let sortedCards = sortedCardsTupple.0
-        let cardGroups = sortedCardsTupple.1
+        
+        let differentCards = sortingAlgorithm.differentCards
+        
+        var value = 0
+        
+        differentCards.forEach {
+            value = value + $0.type.point
+        }
+        groupInfoLabel.text = "Kalan KArtların Değeri = \(value)"
 
         sortedCards.map {
             
-            handleGroup(groups: cardGroups)
             var newCards = [Card]()
             
             $0.forEach {
@@ -176,8 +205,19 @@ final class DeckViewController: UIViewController {
     @IBAction func smartSortButtonTapped() {
         groupInfoLabel.text = ""
         
+        
         let sortedCards = sortingAlgorithm.smartSort(cards: cards)
         
+        let differentCards = sortingAlgorithm.differentCards
+        
+        var value = 0
+        
+        differentCards.forEach {
+            value = value + $0.type.point
+        }
+        
+        groupInfoLabel.text = "Kalan KArtların Değeri = \(value)"
+
         sortedCards.map {
             var newCards = [Card]()
             
@@ -207,14 +247,21 @@ final class DeckViewController: UIViewController {
     
     @IBAction func suitSortButtonTapped() {
         groupInfoLabel.text = ""
-
+        
         let sortedCardsTupple = sortingAlgorithm.suitSort(cards: cards)
         let sortedCards = sortedCardsTupple.0
-        let cardGroups = sortedCardsTupple.1
         
+        let differentCards = sortingAlgorithm.differentCards
+        
+        var value = 0
+        
+        differentCards.forEach {
+            value = value + $0.type.point
+        }
+        groupInfoLabel.text = "Kalan KArtların Değeri = \(value)"
+
         sortedCards.map {
-    
-            handleGroup(groups: cardGroups)
+            
             var newCards = [Card]()
             
             $0.forEach {
@@ -243,19 +290,14 @@ final class DeckViewController: UIViewController {
     
     @IBAction func resetButtonTapped() {
         
-        targetViews.forEach {
-            $0.removeFromSuperview()
-        }
-        
-        targetViews.removeAll()
         cardViews.forEach {
             $0.removeFromSuperview()
         }
         
         cardViews.removeAll()
         
-        
         cards = Dealor.getPlayersDeck()
+        generateCardViews()
         addCardViews()
     }
 }
@@ -296,7 +338,6 @@ extension DeckViewController: CardDragDelegateProtocol {
                 cardView.index = targetViewIndex
             }
             
-            
             cardViews.sort { (cardView1, cardView2) -> Bool in
                 return cardView1.index < cardView2.index
             }
@@ -321,3 +362,8 @@ extension DeckViewController: CardDragDelegateProtocol {
     }    
 }
 
+
+extension FloatingPoint {
+    var degreesToRadians: Self { return self * .pi / 180 }
+    var radiansToDegrees: Self { return self * 180 / .pi }
+}

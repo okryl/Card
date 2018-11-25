@@ -26,7 +26,12 @@ final class CardView: UIView {
     
     private var xOffset: CGFloat = 0.0
     private var yOffset: CGFloat = 0.0
-    private(set) var card: Card!
+    var card: Card! {
+        didSet {
+            setupUI()
+        }
+    }
+
     var index: Int!
     weak var dragDelegate: CardDragDelegateProtocol?
     
@@ -67,8 +72,6 @@ final class CardView: UIView {
         layer.shadowOffset = CGSize(width: -15, height: 0)
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.5
-        
-    
     }
 
     //MARK: - Setup UI
@@ -109,8 +112,8 @@ final class CardView: UIView {
             let point = touch.location(in: superview)
             xOffset = point.x - center.x
             yOffset = point.y - center.y
-            transform = .identity
-            layer.zPosition = 12
+            transform = CGAffineTransform(rotationAngle: 0).translatedBy(x: 0, y: transform.ty)
+            layer.zPosition = CGFloat(CARD_COUNT)
         }
     }
     
