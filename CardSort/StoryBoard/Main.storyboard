@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-Iw-j3e">
-                                        <rect key="frame" x="20" y="112.5" width="627" height="262.5"/>
+                                        <rect key="frame" x="0.0" y="112.5" width="647" height="262.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="400" id="Zc8-Ay-5hN"/>
@@ -45,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgh-ZV-k32">
-                                        <rect key="frame" x="261.5" y="10" width="144" height="40"/>
+                                        <rect key="frame" x="251.5" y="10" width="144" height="40"/>
                                         <color key="backgroundColor" red="0.32921482158044268" green="0.28921825359103981" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="21"/>
                                         <state key="normal" title=" Akıllı Sıralama ">
@@ -113,7 +113,7 @@
                                     <constraint firstItem="TIX-fD-x2J" firstAttribute="leading" secondItem="vfC-m5-koT" secondAttribute="leading" constant="20" id="RIb-Vz-49f"/>
                                     <constraint firstAttribute="bottom" secondItem="M6U-Iw-j3e" secondAttribute="bottom" id="V37-h0-y9N"/>
                                     <constraint firstItem="TIX-fD-x2J" firstAttribute="top" secondItem="vfC-m5-koT" secondAttribute="top" constant="10" id="V5y-nK-FNQ"/>
-                                    <constraint firstItem="M6U-Iw-j3e" firstAttribute="leading" secondItem="vfC-m5-koT" secondAttribute="leading" constant="20" id="Ztg-lG-h55"/>
+                                    <constraint firstItem="M6U-Iw-j3e" firstAttribute="leading" secondItem="vfC-m5-koT" secondAttribute="leading" id="Ztg-lG-h55"/>
                                     <constraint firstItem="qyf-f3-Qbm" firstAttribute="centerY" secondItem="Mgh-ZV-k32" secondAttribute="centerY" id="aOx-Lq-RrD"/>
                                     <constraint firstItem="qyf-f3-Qbm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mgh-ZV-k32" secondAttribute="trailing" constant="8" symbolic="YES" id="rQK-VA-dfI"/>
                                     <constraint firstAttribute="trailing" secondItem="qyf-f3-Qbm" secondAttribute="trailing" constant="20" id="xMh-ek-RaK"/>

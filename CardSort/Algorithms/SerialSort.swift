@@ -27,6 +27,7 @@ class SerialSort: SortProtocol {
     
     //MARK: - Sort Process
     
+    @discardableResult
     func sort(withCards cards: [Card]) -> ([Card], [[Card]]) {
         self.cards = cards
         self.allCards = cards
@@ -65,7 +66,7 @@ class SerialSort: SortProtocol {
         
         for i in 1..<cards.count+1 {
             
-            let result = chackConsecutive(i: i)
+            let result = checkConsecutive(i: i)
             
             if result == CardCompare.consecutive && i - beginIndex > 1 {
                 endIndex = i
@@ -96,7 +97,7 @@ class SerialSort: SortProtocol {
     
     //MARK: - Helper Functions
     
-    private func chackConsecutive(i: Int) -> CardCompare {
+    private func checkConsecutive(i: Int) -> CardCompare {
         if i == cards.count {
             return CardCompare.nonConsecutive
         }
@@ -118,20 +119,9 @@ class SerialSort: SortProtocol {
         var serialCards = [Card]()
         var last: Card?
         
-        for i in 0..<removals {
-            if i != 0 {
-                let card = cards[range[0]]
-                
-                if !(card.type.rank == last?.type.rank && card.suit == last?.suit) {
-                    last = cards.remove(at: range[0])
-                    serialCards.append(last!)
-                } else {
-                    range[0] = range[0] + 1
-                }
-            } else {
-                last = cards.remove(at: range[0])
-                serialCards.append(last!)
-            }
+        for _ in 0..<removals {
+            last = cards.remove(at: range[0])
+            serialCards.append(last!)
         }
         
         return serialCards

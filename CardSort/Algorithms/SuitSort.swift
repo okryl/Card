@@ -20,6 +20,7 @@ class SuitSort: SortProtocol {
     
     //MARK: - Sort Process
     
+    @discardableResult
     func sort(withCards cards: [Card]) -> ([Card], [[Card]]) {
         self.cards = cards
         self.allCards = cards
@@ -81,12 +82,12 @@ class SuitSort: SortProtocol {
             
             for i in 0..<occ.count {
                 if occ[i] == max {
-                    n = i + 1
+                    n = i
                 }
             }
             for i in 0..<cards.count {
                 let card = cards[i]
-                if card.type.rank+1 == n {
+                if card.type.rank == n {
                     indices.append(i)
                 }
             }
@@ -108,16 +109,16 @@ class SuitSort: SortProtocol {
     //MARK: - Helper Functions
     
     private func playSuit(_ indices: [Int]) -> [Card] {
-        var set = Set<Card>()
+        var suitCards = [Card]()
         
         for i in indices {
-            set.insert(cards[i])
+            suitCards.append(cards[i])
         }
         for i in indices.reversed() {
             cards.remove(at: i)
         }
         
-        return Array(set)
+        return suitCards
     }
     
     private func getMax(_ arr: [Int]) -> Int {
