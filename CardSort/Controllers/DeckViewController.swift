@@ -8,7 +8,7 @@
 
 import UIKit
 
-let CARD_COUNT = 5
+let CARD_COUNT = 11
 
 final class DeckViewController: UIViewController {
     
